@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Status Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f9fc;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #6d6875;
+        }
+        select, button {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 1rem;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #6d6875;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #b5838d;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Work Status Generator</h1>
+        <p>Select your task and progress status to generate a status update:</p>
+      <h1>Finishing it! It's final!</h1>
+        <form id="statusForm">
+            <select id="task" required>
+                <option value="" disabled selected>Select Task</option>
+                <option value="Task 1">Task 1</option>
+                <option value="Task 2">Task 2</option>
+                <option value="Task 3">Task 3</option>
+                <option value="Task 4">Task 4</option>
+            </select>
+            <select id="progress" required>
+                <option value="" disabled selected>Select Progress</option>
+                <option value="Finishing it.">Finishing it.</option>
+                <option value="It's Final">It's Final</option>
+            </select>
+            <button type="button" onclick="generateStatus()">Generate Status</button>
+        </form>
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        function generateStatus() {
+            const task = document.getElementById("task").value;
+            const progress = document.getElementById("progress").value;
+            const outputDiv = document.getElementById("output");
+
+            if (task && progress) {
+                outputDiv.textContent = `The status of "${task}" is: ${progress}.`;
+            } else {
+                outputDiv.textContent = "Please select both a task and progress status.";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -51,8 +51,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>Work Status Generator</h1>
-        <h2>Status -> Finishing it, It's final!</h2>
+        <h1>Work Status Generator</h1>  
+        <h2>Statuses -> Giving up, Finishing it, It's done, It's final!</h2>
         <p>Select your task and progress status to generate a status update:</p>
         <form id="statusForm">
             <select id="task" required>
@@ -64,7 +64,9 @@
             </select>
             <select id="progress" required>
                 <option value="" disabled selected>Select Progress</option>
-                <option value="Finishing it.">Finishing it.</option>
+                <option value="Giving up.">Giving up</option>
+                <option value="Finishing it">Finishing it</option>
+                <option value="It's done">It's done</option>
                 <option value="It's Final">It's Final</option>
             </select>
             <button type="button" onclick="generateStatus()">Generate Status</button>
